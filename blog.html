@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DM FITNESS STUDIO Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #ffd700; /* Yellow */
+            --secondary-color: #000000; /* Black */
+            --light-color: #f4f4f4; /* Light gray for backgrounds */
+            --text-color: #333; /* Dark gray for text */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 1rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('C:/Users/DELL/Desktop/DM FITNESS/PHOTOS/gym-equipment.jpg') no-repeat center center/cover;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .blog-header p {
+            font-size: 1.2rem;
+            color: var(--light-color);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('C:/Users/DELL/Desktop/DM FITNESS/PHOTOS/dumbbell.png') no-repeat center center/contain;
+            opacity: 0.1;
+            z-index: -1;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .blog-post {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--primary-color);
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-post h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .blog-post p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .blog-post img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .blog-post video {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .blog-post .caption {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .blog-post .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .blog-post .cta-button:hover {
+            background: #e6c200; /* Darker yellow */
+            transform: scale(1.05);
+        }
+
+        .gym-equipment-graphic {
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: url('C:/Users/DELL/Desktop/DM FITNESS/PHOTOS/dumbbell.png') no-repeat center center/contain;
+            opacity: 0.1;
+            z-index: -1;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1>DM FITNESS STUDIO Blog</h1>
+            <p>Stay updated with the latest fitness tips, workouts, and success stories from our gym.</p>
+            <div class="gym-equipment-graphic"></div>
+        </div>
+
+        <div class="blog-post">
+            <h2>5 Tips to Stay Motivated on Your Fitness Journey</h2>
+            <p>Staying motivated can be one of the biggest challenges when it comes to fitness. Here are five tips to help you stay on track:</p>
+            <ol>
+                <li><strong>Set Realistic Goals:</strong> Break down your long-term goals into smaller, achievable milestones.</li>
+                <li><strong>Find a Workout Buddy:</strong> Exercising with a friend can make your workouts more enjoyable and keep you accountable.</li>
+                <li><strong>Mix It Up:</strong> Try different types of workouts to keep things interesting and challenge your body in new ways.</li>
+                <li><strong>Track Your Progress:</strong> Keep a journal or use an app to track your workouts and see how far you've come.</li>
+                <li><strong>Reward Yourself:</strong> Celebrate your achievements with small rewards to keep yourself motivated.</li>
+            </ol>
+            <img src="C:/Users/DELL/Desktop/DM FITNESS/PHOTOS/motivation.jpg" alt="Motivation Tips">
+            <p class="caption">Our members staying motivated during a group workout session.</p>
+            <a href="#contact" class="cta-button">Join Us Today</a>
+        </div>
+
+        <div class="blog-post">
+            <h2>Transform Your Body with Our Personal Training Program</h2>
+            <p>Our personal training program is designed to help you achieve your fitness goals with one-on-one guidance from our expert trainers. Whether you're looking to lose weight, build muscle, or improve your overall fitness, our trainers will create a customized plan just for you.</p>
+            <video controls>
+                <source src="C:/Users/DELL/Desktop/DM FITNESS/VIDEOS/personal-training.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="caption">Watch our personal trainers in action, helping members achieve their fitness goals.</p>
+            <a href="#contact" class="cta-button">Book a Session</a>
+        </div>
+
+        <div class="blog-post">
+            <h2>Success Story: How John Lost 20kg in 6 Months</h2>
+            <p>John joined DM FITNESS STUDIO six months ago with the goal of losing weight and improving his health. With the help of our trainers and a customized workout plan, John was able to lose 20kg and completely transform his body. Here's his story:</p>
+            <img src="C:/Users/DELL/Desktop/DM FITNESS/PHOTOS/john-before-after.jpg" alt="John's Transformation">
+            <p class="caption">John before and after his incredible transformation.</p>
+            <p>"I never thought I could achieve this, but with the support of the trainers at DM FITNESS STUDIO, I was able to reach my goals. I feel healthier and more confident than ever!" - John</p>
+            <a href="#contact" class="cta-button">Start Your Journey</a>
+        </div>
+
+        <div class="blog-post">
+            <h2>New Boxing Class: Get Fit While Learning Self-Defense</h2>
+            <p>We're excited to announce our new boxing class! This high-intensity workout will not only help you get in shape but also teach you valuable self-defense skills. Whether you're a beginner or an experienced boxer, our certified coaches will guide you through every step.</p>
+            <video controls>
+                <source src="C:/Users/DELL/Desktop/DM FITNESS/VIDEOS/boxing-class.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="caption">Our boxing class in action - a great way to get fit and learn self-defense.</p>
+            <a href="#contact" class="cta-button">Sign Up Now</a>
+        </div>
+    </div>
+</body>
+</html>

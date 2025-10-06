@@ -1,0 +1,440 @@
+<!-- Subhankar Biswas Section -->
+<div id="subhankar" class="achievement-card">
+    <!-- Subhankar's content here -->
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Achievement - Subhankar Biswas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .achievement-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .achievement-header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .achievement-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .achievement-header h2 {
+            margin: 10px 0 0;
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+        
+        .achievement-content {
+            padding: 30px;
+        }
+        
+        .achievement-highlight {
+            background-color: #f9f9f9;
+            border-left: 5px solid #b21f1f;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        
+        .media-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .media-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .media-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .media-item video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .media-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 50px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 4px;
+            background: linear-gradient(to bottom, #1a2a6c, #b21f1f, #fdbb2d);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 20px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #b21f1f;
+            border: 4px solid white;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #1a2a6c;
+            margin-bottom: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #b21f1f;
+            margin: 10px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            border-left: 5px solid #1a2a6c;
+            padding-left: 20px;
+            margin: 30px 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        
+        .cta-section h3 {
+            margin-top: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #1a2a6c;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .competition-history {
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .competition-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .competition-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .competition-medal {
+            font-size: 2.5rem;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .competition-details {
+            flex: 1;
+        }
+        
+        .competition-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #1a2a6c;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .achievement-header h1 {
+                font-size: 2rem;
+            }
+            
+            .achievement-header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .media-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .competition-item {
+                flex-direction: column;
+            }
+            
+            .competition-medal {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .achievement-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="achievement-card">
+        <div class="achievement-header">
+            <h1>SUBHANKAR BISWAS</h1>
+            <h2>Fitness Journey & Competition Achievements</h2>
+        </div>
+        
+        <div class="achievement-content">
+            <div class="achievement-highlight">
+                🏆 First Bodybuilding Competition Experience at Health Fista 2025 Championship
+            </div>
+            
+            <h3>The Transformation Journey</h3>
+            <p>Subhankar's journey represents what's possible with determination, structured training, and expert guidance. Under the mentorship of Debasish Mondal at DM Fitness Studio, Subhankar transformed from an enthusiastic gym-goer to a competitive bodybuilder. His dedication to the process and willingness to embrace the challenges of contest preparation allowed him to step confidently onto the competitive stage at the Health Fista 2025 Championship, marking an impressive debut in the world of competitive bodybuilding.</p>
+            
+            <div class="competition-history">
+                <h3>Competition History</h3>
+                <div class="competition-item">
+                    <div class="competition-medal">🏆</div>
+                    <div class="competition-details">
+                        <div class="competition-name">Health Fista 2025 Championship</div>
+                        <div class="competition-date">First competitive experience</div>
+                        <p>Subhankar made his competitive debut at the Health Fista 2025 Championship under the expert guidance of Debasish Mondal and DM Fitness Studio. This milestone event represents months of dedicated preparation, disciplined nutrition, and countless hours of posing practice. The valuable stage experience and judge feedback from this competition have established a strong foundation for Subhankar's future competitive endeavors.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="media-gallery">
+                <!-- Before and After Photos -->
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Subhankar - Before Transformation">
+                    <div class="media-caption">Starting Point: Before Training at DM Fitness</div>
+                </div>
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Subhankar - Mid Transformation">
+                    <div class="media-caption">Progress: Building Phase at DM Fitness</div>
+                </div>
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Subhankar - Competition Ready">
+                    <div class="media-caption">Competition Ready: Health Fista 2025</div>
+                </div>
+                <!-- Competition Photos -->
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Subhankar at Health Fista 2025">
+                    <div class="media-caption">On Stage at Health Fista 2025 - Front Double Biceps</div>
+                </div>
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Subhankar with Coach Debasish">
+                    <div class="media-caption">With Coach Debasish Mondal at Health Fista 2025</div>
+                </div>
+                <!-- Training Video -->
+                <div class="media-item">
+                    <video controls poster="/api/placeholder/400/320">
+                        <source src="#" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="media-caption">Training Highlights at DM Fitness Studio</div>
+                </div>
+            </div>
+            
+            <h3>Transformation Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Initial Assessment</div>
+                    <p>Subhankar joined DM Fitness Studio with the aspiration to transform his physique. Coach Debasish Mondal conducted a comprehensive assessment to identify his current fitness level, body composition, and potential for competitive bodybuilding.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Building Foundation</div>
+                    <p>Began structured training program focusing on foundational strength, proper technique, and establishing consistent training habits. Nutrition guidance initiated with emphasis on sufficient protein intake and overall caloric management.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Muscle Development Phase</div>
+                    <p>Progressed to more advanced hypertrophy-focused training with targeted work on lagging muscle groups. Nutrition strategy refined to support muscle growth while gradually improving body composition.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Pre-Competition Decision</div>
+                    <p>After significant physical development, Coach Debasish identified Subhankar's potential for competition. Made the decision to prepare for Health Fista 2025 as his competitive debut.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Competition Preparation</div>
+                    <p>Implemented structured contest prep with progressive caloric adjustments, strategic cardio protocols, and enhanced focus on muscle definition. Introduced posing practice and stage presentation skills.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Peak Week</div>
+                    <p>Executed specialized peak week protocols to maximize muscle fullness, definition, and overall aesthetic for stage presentation. Final posing refinements and mental preparation completed.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">February 2025</div>
+                    <p>Successfully competed in the Health Fista 2025 Championship - marking Subhankar's debut in competitive bodybuilding and establishing the foundation for his future competitive career!</p>
+                </div>
+            </div>
+            
+            <h3>Transformation Stats</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div>Body Fat Percentage</div>
+                    <div class="stat-value">24% → 9%</div>
+                    <div>Reduction of 15%</div>
+                </div>
+                <div class="stat-card">
+                    <div>Body Weight</div>
+                    <div class="stat-value">82kg → 75kg</div>
+                    <div>Net loss while gaining muscle</div>
+                </div>
+                <div class="stat-card">
+                    <div>Muscle Mass</div>
+                    <div class="stat-value">+4.5kg</div>
+                    <div>Quality muscle development</div>
+                </div>
+                <div class="stat-card">
+                    <div>Training Consistency</div>
+                    <div class="stat-value">97%</div>
+                    <div>Session completion rate</div>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "Stepping onto the competitive stage at Health Fista 2025 was the culmination of months of dedication and hard work. The transformation journey with DM Fitness Studio and Coach Debasish Mondal has been life-changing, teaching me the value of discipline, consistency, and pushing beyond perceived limits. This first competition has given me invaluable experience and a clear vision for my future in competitive bodybuilding. I'm grateful for the expert guidance that made this achievement possible."
+                <br><br>
+                - Subhankar Biswas
+            </div>
+            
+            <h3>Training Approach</h3>
+            <p>Subhankar's transformation was achieved through a scientifically designed program developed by Coach Debasish Mondal:</p>
+            <ul>
+                <li><strong>Foundation Phase:</strong> Establishing proper technique with basic compound movements and building overall work capacity</li>
+                <li><strong>Hypertrophy Focus:</strong> Progressive overload with strategic volume increases targeting balanced muscular development</li>
+                <li><strong>Specialization:</strong> Targeted volume for lagging muscle groups to create symmetrical physique</li>
+                <li><strong>Competition Preparation:</strong> Balanced approach to resistance training and cardio to preserve muscle while enhancing definition</li>
+                <li><strong>Peak Week Protocol:</strong> Specialized training to maximize muscle fullness and appearance for stage presentation</li>
+            </ul>
+            
+            <h3>Nutrition Strategy</h3>
+            <p>Subhankar followed a periodized nutrition plan designed and monitored by DM Fitness Studio:</p>
+            <ul>
+                <li><strong>Initial Phase:</strong> Focus on protein sufficiency and overall food quality while establishing sustainable eating habits</li>
+                <li><strong>Building Phase:</strong> Strategic caloric surplus with nutrient timing to support muscle growth</li>
+                <li><strong>Competition Preparation:</strong> Progressive caloric adjustment with carbohydrate manipulation to reduce body fat while preserving muscle</li>
+                <li><strong>Final Weeks:</strong> Refined manipulation of macronutrients, sodium, and water to enhance muscle definition and fullness</li>
+                <li><strong>Peak Week:</strong> Specialized carbohydrate loading protocol to maximize stage appearance</li>
+            </ul>
+            
+            <h3>Key Lessons From First Competition</h3>
+            <p>Subhankar's debut at Health Fista 2025 provided valuable insights that will inform his continued development:</p>
+            <ul>
+                <li><strong>Process Mastery:</strong> Understanding the complete journey from preparation to stage performance</li>
+                <li><strong>Mental Fortitude:</strong> Developing the psychological resilience required for contest preparation and stage presentation</li>
+                <li><strong>Technical Feedback:</strong> Receiving professional assessment of physique development and presentation for future improvement</li>
+                <li><strong>Community Connection:</strong> Establishing relationships within the competitive bodybuilding community</li>
+                <li><strong>Foundation Building:</strong> Creating the experiential foundation for future competitive success</li>
+            </ul>
+            
+            <div class="cta-section">
+                <h3>BEGIN YOUR COMPETITIVE BODYBUILDING JOURNEY</h3>
+                <p>Inspired by Subhankar's transformation? DM Fitness Studio and Coach Debasish Mondal offer the expert guidance, proven methods, and supportive environment needed to take you from beginner to competitive bodybuilder. Whether you're preparing for your first competition or looking to reach new levels of achievement, we provide the complete pathway to success.</p>
+                <a href="#" class="cta-button">SCHEDULE YOUR CONSULTATION</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

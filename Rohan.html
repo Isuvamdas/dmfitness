@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Achievement - Rohan Tarafdar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .achievement-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .achievement-header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .achievement-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .achievement-header h2 {
+            margin: 10px 0 0;
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+        
+        .achievement-content {
+            padding: 30px;
+        }
+        
+        .achievement-highlight {
+            background-color: #f9f9f9;
+            border-left: 5px solid #b21f1f;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        
+        .media-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .media-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .media-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .media-item video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .media-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 50px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 4px;
+            background: linear-gradient(to bottom, #1a2a6c, #b21f1f, #fdbb2d);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 20px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #b21f1f;
+            border: 4px solid white;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #1a2a6c;
+            margin-bottom: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #b21f1f;
+            margin: 10px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            border-left: 5px solid #1a2a6c;
+            padding-left: 20px;
+            margin: 30px 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        
+        .cta-section h3 {
+            margin-top: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #1a2a6c;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .competition-history {
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .competition-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .competition-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .competition-medal {
+            font-size: 2.5rem;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .competition-details {
+            flex: 1;
+        }
+        
+        .competition-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #1a2a6c;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .achievement-header h1 {
+                font-size: 2rem;
+            }
+            
+            .achievement-header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .media-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .competition-item {
+                flex-direction: column;
+            }
+            
+            .competition-medal {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .achievement-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="achievement-card">
+        <div class="achievement-header">
+            <h1>ROHAN TARAFDAR</h1>
+            <h2>Fitness Journey & Competition Achievements</h2>
+        </div>
+        
+        <div class="achievement-content">
+            <div class="achievement-highlight">
+                🏆 Secured 4th Place in Men's Physique Category at Bangabir 2025 Championship
+            </div>
+            
+            <h3>The Transformation Journey</h3>
+            <p>Rohan's journey is a testament to dedication, consistency, and the power of proper guidance. From his first day at our gym to stepping on the competitive stage, every rep, every meal, and every drop of sweat has contributed to his remarkable achievements. What makes his story particularly inspiring is that he embraced the competitive bodybuilding world with courage and determination, making his debut at the Haldia Gold Classic before advancing to earn recognition at the prestigious Bangabir 2025 Championship.</p>
+            
+            <div class="competition-history">
+                <h3>Competition History</h3>
+                <div class="competition-item">
+                    <div class="competition-medal">🏅</div>
+                    <div class="competition-details">
+                        <div class="competition-name">Haldia Gold Classic</div>
+                        <div class="competition-date">First competitive experience</div>
+                        <p>Rohan took a bold step into the world of competitive bodybuilding with his debut at the Haldia Gold Classic. This first competition experience provided invaluable stage time, feedback from judges, and a clear understanding of the competitive landscape. The learnings from this competition formed the foundation for his subsequent competitive success.</p>
+                    </div>
+                </div>
+                <div class="competition-item">
+                    <div class="competition-medal">🏆</div>
+                    <div class="competition-details">
+                        <div class="competition-name">Bangabir 2025 Championship</div>
+                        <div class="competition-date">February 2025</div>
+                        <p>Building on his previous experience, Rohan brought a significantly improved physique and stage presence to the Bangabir 2025 Championship. His hard work and the refinements made to his training, nutrition, and posing resulted in securing 4th place in the highly competitive Men's Physique category, marking a tremendous achievement in his competitive journey.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="media-gallery">
+                <!-- Before and After Photos -->
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Rohan - Before Transformation">
+                    <div class="media-caption">Starting Point: Training Begins</div>
+                </div>
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Rohan - First Competition">
+                    <div class="media-caption">First Competition: Haldia Gold Classic</div>
+                </div>
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Rohan - After Transformation">
+                    <div class="media-caption">Competition Ready: Bangabir 2025</div>
+                </div>
+                <!-- Competition Photos -->
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Rohan at Bangabir 2025">
+                    <div class="media-caption">On Stage at Bangabir 2025 - Front Pose</div>
+                </div>
+                <div class="media-item">
+                    <img src="/api/placeholder/400/320" alt="Rohan Receiving Trophy">
+                    <div class="media-caption">Award Ceremony - 4th Place at Bangabir 2025</div>
+                </div>
+                <!-- Training Video -->
+                <div class="media-item">
+                    <video controls poster="/api/placeholder/400/320">
+                        <source src="#" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="media-caption">Training Highlights</div>
+                </div>
+            </div>
+            
+            <h3>Transformation Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Initial Phase</div>
+                    <p>Rohan joined our fitness center with the goal of competing in men's physique. Initial assessment revealed significant potential but required structured training and nutrition guidance to prepare for competitive bodybuilding.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Building Phase</div>
+                    <p>Completed first bulking phase with focused training to develop a balanced physique. Training emphasized proportional muscle development particularly in lagging areas to create the aesthetic required for men's physique competition.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">First Competition Prep</div>
+                    <p>Began preparation for the Haldia Gold Classic with calculated caloric deficit while maintaining muscle mass. Introduced posing practice and stage presentation skills training.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Haldia Gold Classic</div>
+                    <p>Competed in his first bodybuilding competition at the Haldia Gold Classic. This debut experience provided crucial feedback and identified specific areas for improvement.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Improvement Phase</div>
+                    <p>Based on competition feedback, implemented targeted improvements focusing on muscle symmetry, conditioning, and stage presence. Refined nutrition approach and training methodology.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Bangabir 2025 Prep</div>
+                    <p>Fine-tuning phase with advanced protocols including carb cycling and strategic depletion/loading. Posing routines perfected with coach feedback and enhanced stage confidence.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">February 2025</div>
+                    <p>Competed in Bangabir 2025 Championship and secured 4th place in the Men's Physique category - a significant achievement demonstrating his growth and development as a competitive bodybuilder!</p>
+                </div>
+            </div>
+            
+            <h3>Transformation Stats</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div>Body Fat Percentage</div>
+                    <div class="stat-value">22% → 8%</div>
+                    <div>Reduction of 14%</div>
+                </div>
+                <div class="stat-card">
+                    <div>Body Weight</div>
+                    <div class="stat-value">78kg → 72kg</div>
+                    <div>Net loss while gaining muscle</div>
+                </div>
+                <div class="stat-card">
+                    <div>Muscle Mass</div>
+                    <div class="stat-value">+5kg</div>
+                    <div>Clean muscle gain</div>
+                </div>
+                <div class="stat-card">
+                    <div>Competitions</div>
+                    <div class="stat-value">2</div>
+                    <div>Growing experience</div>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "The journey from being just another gym-goer to standing on competitive stages has been transformative both physically and mentally. My first competition at Haldia Gold Classic taught me what it truly takes to be competitive, and those lessons were instrumental in achieving 4th place at Bangabir 2025. I couldn't have made this progress without the expert guidance, constant motivation, and scientific approach from my coaches. This is just the beginning of my competitive journey."
+                <br><br>
+                - Rohan Tarafdar
+            </div>
+            
+            <h3>Training Approach</h3>
+            <p>Rohan's transformation was achieved through a meticulously designed program that evolved through different phases:</p>
+            <ul>
+                <li><strong>Foundation Phase:</strong> Focus on compound movements to build overall strength and muscle mass</li>
+                <li><strong>Hypertrophy Phase:</strong> Targeted volume training for specific muscle groups needing development</li>
+                <li><strong>First Competition Prep:</strong> Strategic combination of resistance training and cardio to preserve muscle while reducing body fat</li>
+                <li><strong>Post-Competition Improvement:</strong> Addressing specific areas identified during first competition</li>
+                <li><strong>Advanced Competition Prep:</strong> Specialized training to enhance muscle separation, symmetry, and conditioning for Bangabir 2025</li>
+            </ul>
+            
+            <h3>Nutrition Strategy</h3>
+            <p>Rohan's nutrition was periodized to support each phase of his transformation:</p>
+            <ul>
+                <li><strong>Initial Stage:</strong> Moderate caloric surplus with high protein intake</li>
+                <li><strong>Building Phase:</strong> Strategic caloric surplus with nutrient timing</li>
+                <li><strong>First Competition Cutting Phase:</strong> Calculated deficit with basic carb manipulation</li>
+                <li><strong>Improvement Phase:</strong> Nutrition periodization to support targeted growth</li>
+                <li><strong>Bangabir Prep:</strong> Advanced cutting with refined carb cycling and precision timing</li>
+                <li><strong>Competition Peak:</strong> Specialized carb loading and water manipulation protocol</li>
+            </ul>
+            
+            <h3>Lessons From Competition Experience</h3>
+            <p>The progression from Haldia Gold Classic to achieving 4th place at Bangabir 2025 demonstrates several key aspects of successful competitive bodybuilding:</p>
+            <ul>
+                <li><strong>Experience Value:</strong> Stage time and first competition feedback were invaluable for improvement</li>
+                <li><strong>Refined Approach:</strong> Adjustments to training, nutrition, and presentation based on real competition experience</li>
+                <li><strong>Mental Development:</strong> Enhanced confidence and stage presence from previous competition experience</li>
+                <li><strong>Strategic Improvements:</strong> Targeted development of specific areas based on judge feedback</li>
+            </ul>
+            
+            <div class="cta-section">
+                <h3>START YOUR OWN TRANSFORMATION JOURNEY</h3>
+                <p>Whether you're aiming for the competition stage or simply wanting to transform your physique, our proven methods can help you achieve results like Rohan. From your first competition to placing in prestigious events, we provide the guidance needed for success.</p>
+                <a href="#" class="cta-button">BOOK A CONSULTATION</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

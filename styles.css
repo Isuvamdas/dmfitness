@@ -1,0 +1,1031 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: #121212;
+}
+
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #ffd700;
+}
+
+a {
+  text-decoration: none;
+  color: #ffd700;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+}
+
+nav .logo h1 {
+  color: #ffd700;
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav .logo p {
+  color: #fff;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Sections */
+.membership, .training, .gallery, .contact {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.plan-card, .training-card {
+  background-color: #222;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+button[type="submit"], .cta-button {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+button[type="submit"]:hover, .cta-button:hover {
+  background-color: #b71c1c;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #121212;
+  color: #fff;
+}
+
+
+
+/* Membership Section */
+.membership {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.plan-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.plan-card h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.plan-card p {
+  font-size: 1.5rem;
+  color: #d32f2f;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plan-card ul li {
+  margin: 0.5rem 0;
+}
+
+/* Training Section */
+.training {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.training-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.training-card {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.training-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Contact Section */
+.contact {
+  padding: 4rem 2rem;
+  text-align: center
+;
+  background-color: #000;
+  color: #fff;
+}
+
+.contact h2 {
+  color: #ffd700;
+}
+
+.social-icons img {
+  width: 30px;
+  margin: 0 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+.contact-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #b71c1c;
+}
+.gallery {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+.contact-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #d32f2f;
+  outline: none;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+button[type="submit"] {
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #b71c1c;
+}
+
+.success-message {
+  color: #4caf50;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  display: none;
+}
+.gallery {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+.contact-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #d32f2f;
+  outline: none;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+button[type="submit"] {
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #b71c1c;
+}
+
+.success-message {
+  color: #4caf50;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  display: none;
+}
+.gallery {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+.map {
+  margin: 2rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.map {
+  margin: 2rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 1rem 2rem;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 50px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+nav .logo h1 {
+  color: #ffd700;
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav .logo p {
+  color: #fff;
+  margin: 0;
+  font-size: 0.9rem;
+
+
+
+
+
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
+}
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('C:\Users\DELL\Desktop\DM FITNESS\image\gym-hero.jpg'); /* Update this path to your image location */
+    background-size: cover;
+    background-position: center;
+    /* rest of the properties remain the same */
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h2 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.cta-button {
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #b71c1c;
+}
+/* Debasish Mondal Photos Section */
+.debasish-photos {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.debasish-photos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.photos-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Space between photos */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+.photos-container img {
+  width: 400px; /* Adjust size as needed */
+  height: 350px; /* Adjust size as needed */
+  border-radius: 10px;
+  object-fit: cover; /* Ensure photos maintain aspect ratio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.photos-container img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+body {
+  background-image: url('C:\Users\DELL\Desktop\DM FITNESS\image\gym-hero.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the image fixed while scrolling */
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.hero {
+  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fthe-gym&psig=AOvVaw1YHNs53ioq7sbhrQOyJ5kG&ust=1740337866421000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjD7_T914sDFQAAAAAdAAAAABAE'); /* Path to your hero background image */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Makes the hero section full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; /* Ensure text is readable on the background */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 0% opacity */
+  z-index: 1; /* Places the overlay above the background image */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Places the content above the overlay */
+}
+.training-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+
+
+
+          .program-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;  /* Ensures all cards are in one row */
+    flex-wrap: nowrap;  /* Prevents wrapping */
+    justify-content: space-between;  /* Distributes evenly */
+    gap: 1rem;  /* Reduces space between cards */
+    overflow-x: auto;  /* Enables horizontal scrolling if needed */
+    padding: 2rem 0;
+}
+
+.program-card {
+    flex: 1;  /* Ensures equal width */
+    min-width: 280px;  /* Adjust size to fit in one row */
+    max-width: 300px;  /* Ensures uniform card sizes */
+}
+<style>
+    .contact-title {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--secondary-color);
+        animation: fadeInDown 1.5s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<style>
+    .contact-title {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--secondary-color);
+        animation: fadeInDown 1.5s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<section id="contact" class="contact">
+    <h2 class="contact-title">Contact Us</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Visit Us</h3>
+            <p>Bhasa 14 no, Bishnupur</p>
+            <p>South 24 Parganas, West Bengal, 743503</p>
+            <h3>Call Us</h3>
+            <p>+91 7003226506</p>
+            <p>+91 8296921873</p>
+            <h3>Hours</h3>
+            <p>Open 365 Days</p>
+            <p>5 AM – 11 PM</p>
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </div>
+</section>
+/* Centered Header */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.decorative-line {
+    width: 100px;
+    height: 2px;
+    background: var(--primary-color);
+    margin: 0 1.5rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0 2rem;
+}
+
+/* Animated Graphics */
+.membership-graphics {
+    position: relative;
+    height: 150px;
+    margin: 4rem 0;
+}
+
+.graphic {
+    position: absolute;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.dumbbell {
+    left: 20%;
+    width: 50px;
+    height: 20px;
+    background: url('dumbbell-icon.svg') no-repeat;
+}
+
+.weight-plate {
+    right: 20%;
+    width: 40px;
+    height: 40px;
+    background: url('weight-plate-icon.svg') no-repeat;
+}
+
+.pulse-circle {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 0.2; }
+    100% { transform: scale(0.8); opacity: 0; }
+}
+
+.animate-slide-up {
+    animation: slideUp 1s ease-out forwards;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate {
+    animation: rotate 8s linear infinite;
+}
+
+.pulse-circle {
+    animation: pulse 4s linear infinite;
+}
+
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover Effects */
+.plan-card:hover .cta-button {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,165,0,0.3);
+}
+
+.plan-card:hover .plan-price {
+    color: #ff6b00;
+    transition: color 0.3s ease;
+}
+<!-- Add this CSS -->
+<style>
+    /* Email Icon */
+    .email-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'%3E%3C/path%3E%3Cpolyline points='22,6 12,13 2,6'%3E%3C/polyline%3E%3C/svg%3E");
+    }
+
+    /* Animated Email Graphic */
+    .email-graphic {
+        position: relative;
+        width: 80px;
+        height: 60px;
+        margin: 1rem auto;
+    }
+
+    .envelope {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--secondary-color);
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .paper {
+        position: absolute;
+        width: 70%;
+        height: 50%;
+        background: white;
+        left: 15%;
+        top: 25%;
+        opacity: 0.9;
+        transform: translateY(-10px);
+        animation: paperSlide 2s ease-in-out infinite;
+    }
+
+    .email-link a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        transition: all 0.3s;
+        position: relative;
+        display: inline-block;
+    }
+
+    .email-link a:hover {
+        color: white;
+        transform: translateY(-2px);
+    }
+ .email-link a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--secondary-color);
+        transition: width 0.3s;
+    }
+
+    .email-link a:hover::after {
+        width: 100%;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @keyframes paperSlide {
+        0%, 100% { transform: translateY(-10px); }
+        50% { transform: translateY(0); }
+    }
+</style>
+/* Add to your existing CSS */
+.animated-strip {
+    height: 8px;
+    background: linear-gradient(90deg, 
+        var(--primary-color) 0%, 
+        var(--secondary-color) 50%, 
+        var(--primary-color) 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: 76px; /* Match navbar height */
+}
+
+.strip-wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 15px,
+        rgba(255,255,255,0.2) 15px,
+        rgba(255,255,255,0.2) 30px
+    );
+    animation: waveSlide 20s linear infinite;
+}
+
+.glow-effect {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.4) 50%,
+        rgba(255,255,255,0) 100%);
+    animation: glowSlide 3s ease-in-out infinite;
+}
+
+@keyframes waveSlide {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+}
+
+@keyframes glowSlide {
+    0% { left: -100px; }
+    100% { left: 100%; }
+}
+
+.animated-strip {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+    animation: moveColors 3s linear infinite;
+    margin: 50px 0; /* Adjust margin to control spacing */
+}
+
+@keyframes moveColors {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.animated-strip {
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+}
+<style>.gallery-button-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.gallery-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-button .button-icon {
+    margin-left: 10px;
+    font-size: 1.5rem;
+}
+
+.gallery-button:hover {
+    background: var(--secondary-color);
+    color: #333;
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 15px 5px rgba(211, 47, 47, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0);
+    }
+}
+
+.gallery-button {
+    animation: pulseGlow 2s infinite;
+} .animated-button {
+    background: var(--light-color);
+    color: var(--dark-color); /* Adjust text color for better contrast */
+    border: 2px solid var(--primary-color); /* Optional: add a border to make it stand out */
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+}
+
+.animated-button:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3);
+}
+
+<style>
+
+
+.dumbbell {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

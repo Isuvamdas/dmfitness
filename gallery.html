@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        .gallery-item .caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            transition: bottom 0.3s ease;
+            z-index: 1;
+        }
+        .gallery-item:hover .caption {
+            bottom: 0;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .animated-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 40px 0 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img, .lightbox video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h1 class="section-title animate__animated animate__fadeIn">Photo Gallery</h1>
+        <div class="gallery">
+            <div class="gallery-item animated-float">
+                <img src="photo1.jpg" alt="Photo 1" data-src="photo1.jpg">
+                <div class="caption">Photo 1</div>
+            </div>
+            <div class="gallery-item animated-float">
+                <img src="photo2.jpg" alt="Photo 2" data-src="photo2.jpg">
+                <div class="caption">Photo 2</div>
+            </div>
+            <div class="gallery-item animated-float">
+                <img src="photo3.jpg" alt="Photo 3" data-src="photo3.jpg">
+                <div class="caption">Photo 3</div>
+            </div>
+            <!-- Add more photo items as needed -->
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="section-title animate__animated animate__fadeIn">Video Gallery</h1>
+        <div class="gallery">
+            <div class="gallery-item animated-float">
+                <video autoplay loop muted data-src="video1.mp4">
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="caption">Video 1</div>
+            </div>
+            <div class="gallery-item animated-float">
+                <video autoplay loop muted data-src="video2.mp4">
+                    <source src="video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="caption">Video 2</div>
+            </div>
+            <!-- Add more video items as needed -->
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Lightbox Image">
+        <video controls autoplay loop muted style="display: none;">
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Lightbox functionality
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxVideo = lightbox.querySelector('video');
+        const closeBtn = lightbox.querySelector('.close-btn');
+
+        // Open lightbox with clicked media
+        document.querySelectorAll('.gallery-item img, .gallery-item video').forEach(item => {
+            item.addEventListener('click', () => {
+                if (item.tagName === 'IMG') {
+                    lightboxImg.src = item.dataset.src;
+                    lightboxImg.style.display = 'block';
+                    lightboxVideo.style.display = 'none';
+                } else if (item.tagName === 'VIDEO') {
+                    lightboxVideo.querySelector('source').src = item.dataset.src;
+                    lightboxVideo.load();
+                    lightboxVideo.style.display = 'block';
+                    lightboxImg.style.display = 'none';
+                }
+                lightbox.classList.add('active');
+            });
+        });
+
+        // Close lightbox
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            lightboxVideo.pause();
+        });
+
+        // Lazy loading for images and videos
+        const lazyLoad = (targets) => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const item = entry.target;
+                        if (item.tagName === 'IMG') {
+                            item.src = item.dataset.src;
+                        } else if (item.tagName === 'VIDEO') {
+                            item.querySelector('source').src = item.dataset.src;
+                            item.load();
+                        }
+                        observer.unobserve(item);
+                    }
+                });
+            }, { rootMargin: '0px 0px 100px 0px' });
+
+            targets.forEach(target => observer.observe(target));
+        };
+
+        // Apply lazy loading to all images and videos
+        lazyLoad(document.querySelectorAll('.gallery-item img, .gallery-item video'));
+    </script>
+</body>
+</html>
